@@ -15,7 +15,16 @@ public class Client {
             dataInputStream = new DataInputStream(socket.getInputStream());
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
-            if (!receiveMessage().startsWith(RESPONSE_OK)) {
+            String connectionResponse = receiveMessage();
+            if (!connectionResponse.equals(RESPONSE_OK)) {
+                System.out.println(connectionResponse);
+                return -1;
+            }
+
+            sendMessage("1.0");
+            String versionResponse = receiveMessage();
+            if (!versionResponse.equals(RESPONSE_OK)) {
+                System.out.println(versionResponse);
                 return -1;
             }
 
