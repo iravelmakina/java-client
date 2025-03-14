@@ -1,7 +1,7 @@
-# Java Client-Server Application for File Transfer
+# Java Client-Server Application for File Transfer (v1)
 
 ## Overview
-This project implements a **Java Client** for a **Client-Server application** over **TCP**. The client is designed to communicate with the server described in the **[Client-Server C++ Repository](https://github.com/iravelmakina/client-server)**. The Java client performs various file operations on the server, such as **uploading**, **downloading**, **listing**, **deleting**, and **retrieving file information**. Communication follows a **custom protocol** for handling these requests and responses.
+This project implements a **Java Client** for a **Client-Server application** over **TCP**. The client is designed to communicate with the **v1 server** described in the **[Client-Server C++ Repository](https://github.com/iravelmakina/client-server)**. The Java client performs various file operations on the server, such as **uploading**, **downloading**, **listing**, **deleting**, and **retrieving file information**. Communication follows a **custom protocol** for handling these requests and responses.
 
 The system includes a **Client class** to handle socket operations, manage file transfers, and interact with the server. The **ClientCLI class** provides a simple command-line interface for users to interact with the server.
 
@@ -11,8 +11,7 @@ The system includes a **Client class** to handle socket operations, manage file 
 - **Message Prefix**: A 4-byte length prefix indicating the size of the data being sent, ensuring reliable data transfer.
 - **Error Handling**: Proper error codes for invalid operations (e.g., file not found, permission errors, server failures).
 - **ClientCLI**: A command-line interface to interact with the server and perform file operations.
-
-This client is specifically implemented to communicate with the server in the [Client-Server C++ Repository](https://github.com/iravelmakina/client-server), which handles the file operations.
+- **Compatibility**: This client is specifically designed to work with **v1** of the server in the [Client-Server C++ Repository](https://github.com/iravelmakina/client-server).
 
 ## Installation and Compilation
 
@@ -42,7 +41,7 @@ To run the client application:
 java -cp out Main
 ```
 
-Make sure that the **server** (from the [Client-Server C++ Repository](https://github.com/iravelmakina/client-server) or your custom server with the following protocol) is running before starting the client.
+Make sure that the **v1 server** (from the [Client-Server C++ Repository](https://github.com/iravelmakina/client-server)) is running before starting the client.
 
 ## Usage
 
@@ -54,7 +53,7 @@ Make sure that the **server** (from the [Client-Server C++ Repository](https://g
 - **INFO <filename>**: Retrieve metadata (size, last modified, etc.) of a file on the server.
 - **EXIT**: Disconnect from the server.
 
-These commands are designed to interact with the server in the **[Client-Server C++ Repository](https://github.com/iravelmakina/client-server)**. 
+These commands are designed to interact with the **v1 server** in the **[Client-Server C++ Repository](https://github.com/iravelmakina/client-server)**. 
 
 ### **Example**:
 - To **list files**:
@@ -90,13 +89,14 @@ java-client/
 │── .gitignore                 # Git ignore file for excluding unnecessary files
 │── .gitattributes             # Git attributes file
 │── README.md                  # Documentation (this file)
-
 ```
 
 ## Protocol Description
 
-For details on the protocol and how to implement it on the server side, refer to the [Client-Server C++ Repository](https://github.com/iravelmakina/client-server).
+For details on the protocol and how to implement it on the server side, refer to the [Client-Server C++ v1](https://github.com/iravelmakina/client-server/tree/version-1). This client is specifically designed for **v1** of the server.
 
-# License
+---
+
+## License
 
 This project is open-source under the **MIT License**.
